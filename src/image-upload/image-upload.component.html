@@ -1,0 +1,23 @@
+<div class="upload-wrapper">
+  <div class="upload-container" (click)="imageInput.click()">
+    <div class="upload-img">
+      <img src="{{ previewImage }}" alt="" />
+    </div>
+    <p class="upload-text">
+      {{ currentFile?.name || 'Selecciona una imagen' }}
+    </p>
+  </div>
+  <div>
+    <input
+      #imageInput
+      type="file"
+      class="visually-hidden"
+      id="upload-input"
+      accept=".png, .jpg, jpeg"
+      (change)="handleFileInput($event)"
+    />
+    <button type="button" class="upload-btn" (click)="imageInput.click()">
+      Cargar imagen
+    </button>
+  </div>
+</div>
